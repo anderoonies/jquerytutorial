@@ -68,6 +68,16 @@ into the developer console.
 
 This doesn't work for a lot of newer websites that already have the default behavior disabled. Reddit's front end is primitive, though, so we can break it.
 
+When we're scrolling to an element we'll be setting the scrollTop: property of the page to the y position of the target.
+
+We can grab this using:
+
+```
+$('#targetElement').offset().top
+```
+
+This should be all we need to perform the animation.
+
 
 ### The actual challenge
 
@@ -78,9 +88,11 @@ Create a basic webpage using `template.html` that:
 * Prevents the default action on <a> clicks
 * Performs a jQuery scroll animation to the target element
 
-To perform a scroll using .animate() we first need to identify the arguments of the function we'll need.
+To perform a scroll using .animate() we need to identify the arguments of the function we'll need.
 
 As we've said, we want to change the `scrollTop` property of the entire webpage—essentially, $('html').
+
+Write a function that performs an animation that scrolls to 
 
 
 

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery Demo</title>
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script>
+  $(function(){
+		$('a[href^="#"]').on('click', function(event) {
+		    var target = $( $(this).attr('href') );
+		    if( target.length ) {
+		        event.preventDefault();
+		        console.log('ayo');
+		        $('html, body').animate({
+		            scrollTop: target.offset().top
+		        }, 1000);
+		    }
+		});
+	});
+  </script>
+</head>
+<body>
+	<a href="#element2">To element 2</a>
+	<div id="element1" style="height: 2000px; width: 400px; background-color: red;"></div>
+	<a href="#element3">To element 3</a>
+	<div id="element2" style="height: 2000px; width: 400px; background-color: blue;"></div>
+	<div id="element3" style="height: 2000px; width: 400px; background-color: green;"></div>
+	</div>
+</body>
+</html>
